@@ -1,3 +1,6 @@
 <h2>
   welcome#index
 </h2>
+<%= form_tag("/auth/discord", method: "post", data: { turbo: false }) do %>
+  <button type="submit">Teacher Teacherのコミュニティに参加する</button>
+<% end %>

@@ -16,6 +16,9 @@
         <%= link_to "Gate", root_path %>
       </h1>
     </header>
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
