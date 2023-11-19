@@ -5,6 +5,7 @@ ruby "3.2.2"
 gem "rails", "~> 7.1.2"
 
 gem "bootsnap", require: false
+gem "google_drive"
 gem "importmap-rails"
 gem "jbuilder"
 gem "omniauth-discord"
