@@ -8,5 +8,5 @@ authorizer = Google::Auth::ServiceAccountCredentials.make_creds(
 
 authorizer.fetch_access_token!
 api.authorization = authorizer
-sheet = api.get_spreadsheet("1n6qkfKk2WUhYf2kpo8VBguc_JY4jVFsMCRPXIZM_L9E")
-p sheet
+sheet = api.get_spreadsheet(ENV["GOOGLE_SHEETS_SHEET_ID"])
+p api.get_spreadsheet_values(sheet.spreadsheet_id, "A:C", value_render_option: "FORMULA").values
