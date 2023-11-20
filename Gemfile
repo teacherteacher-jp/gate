@@ -5,6 +5,7 @@ ruby "3.2.2"
 gem "rails", "~> 7.1.2"
 
 gem "bootsnap", require: false
+gem "google-apis-sheets_v4"
 gem "importmap-rails"
 gem "jbuilder"
 gem "omniauth-discord"
@@ -21,6 +22,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "dotenv-rails"
   gem "web-console"
 end
 
