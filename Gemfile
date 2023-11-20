@@ -22,6 +22,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "dotenv-rails"
   gem "web-console"
 end
 
