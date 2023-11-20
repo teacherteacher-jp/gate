@@ -1,7 +1,6 @@
 require "google/apis/sheets_v4"
 api = Google::Apis::SheetsV4::SheetsService.new
 authorizer = Google::Auth::ServiceAccountCredentials.make_creds(
-  json_key_io: File.open(Rails.root.join("google-apis-credentials.json")),
   scope: %w[
     https://www.googleapis.com/auth/spreadsheets
   ]
