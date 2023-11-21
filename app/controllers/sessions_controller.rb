@@ -4,6 +4,12 @@ class SessionsController < ApplicationController
     name = auth_hash.dig("info", "name")
     email = auth_hash.dig("info", "email")
 
-    redirect_to root_path, notice: "ようこそ、#{name}さん！"
+    found = Sheet.find_email_and_write_name(email, name)
+
+    if found
+      redirect_to root_path, notice: "ようこそ、#{name}さん！"
+    else
+      redirect_to root_path, alert: "メールアドレスが登録されていません"
+    end
   end
 end
