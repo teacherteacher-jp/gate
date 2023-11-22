@@ -5,7 +5,7 @@ ruby "3.2.2"
 gem "rails", "~> 7.1.2"
 
 gem "bootsnap", require: false
-gem "discordrb"
+gem "faraday"
 gem "google-apis-sheets_v4"
 gem "importmap-rails"
 gem "jbuilder"
