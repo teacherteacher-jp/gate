@@ -317,6 +317,7 @@ DEPENDENCIES
   capybara
   debug
   dotenv-rails
+  faraday
   google-apis-sheets_v4
   importmap-rails
   jbuilder
