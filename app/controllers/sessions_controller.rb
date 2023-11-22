@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
     auth_hash = request.env["omniauth.auth"]
     name = auth_hash.dig("info", "name")
     email = auth_hash.dig("info", "email")
+    token = auth_hash.dig("credentials", "token")
 
     found = Sheet.find_email_and_write_name(email, name)
 
