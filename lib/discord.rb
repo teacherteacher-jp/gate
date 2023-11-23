@@ -20,6 +20,16 @@ class Discord
     JSON.parse(get("/guilds/#{server_id}/roles").body)
   end
 
+  def channels(server_id)
+    JSON.parse(get("/guilds/#{server_id}/channels").body)
+  end
+
+  def post_message(channel_id:, content:)
+    @connection.post(BASE_PATH + "/channels/#{channel_id}/messages") do |request|
+      request.body = { content: content }.to_json
+    end
+  end
+
   def invite(server_id:, user_id:, user_token:)
     @connection.put(BASE_PATH + "/guilds/#{server_id}/members/#{user_id}") do |request|
       request.body = { access_token: user_token }.to_json
