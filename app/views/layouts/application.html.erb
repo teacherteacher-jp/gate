@@ -7,21 +7,26 @@
     <%= favicon_link_tag("favicon.png") %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag("application", "data-turbo-track": "reload") %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <header>
-      <h1>
-        <%= link_to "Gate", root_path %>
-      </h1>
-    </header>
-    <% if notice %>
-      <p class="notice"><%= notice %></p>
-    <% else %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
-    <%= yield %>
+    <div class="container">
+      <header>
+        <h1>
+          <%= link_to "Teacher Teacher", root_path %>
+        </h1>
+      </header>
+      <% if notice %>
+        <p class="notice"><%= notice %></p>
+      <% else %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
+      <div class="cover">
+        <%= image_tag("image.png") %>
+      </div>
+      <%= yield %>
+    </div>
   </body>
 </html>
