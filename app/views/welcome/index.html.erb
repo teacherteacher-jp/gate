@@ -1,3 +1,23 @@
+<h2>
+  Teacher Teacherの
+  <br>
+  コミュニティへようこそ！
+</h2>
+
+<p>
+  ここはTeacher Teacherのコミュニティの入口です。
+  現在、フリースクールのスポンサーのみなさまを対象に、コミュニティへの招待を行っています。
+  以下の手順に従い、ぜひご参加ください。
+</p>
+
+<ol>
+  <li>
+    <%= link_to("Discord", "https://discord.com", target: "_blank") %>
+    のアカウントを作成する
+  </li>
+  <li>本ページ下部の「参加する」ボタンを押し、Discordアカウントで認証する</li>
+</ol>
+
 <%= form_tag("/auth/discord", method: "post", data: { turbo: false }) do %>
-  <button type="submit">Teacher Teacherのコミュニティに参加する</button>
+  <button type="submit">参加する</button>
 <% end %>
