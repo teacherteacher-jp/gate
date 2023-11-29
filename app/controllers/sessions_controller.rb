@@ -18,9 +18,9 @@ class SessionsController < ApplicationController
       discord.invite(server_id: server["id"], user_id: user_id, user_token: user_token)
       discord.add_role(server_id: server["id"], user_id: user_id, role_id: role["id"])
 
-      redirect_to root_path, notice: "ようこそ、#{name}さん！"
+      redirect_to root_path, notice: "こんにちは、#{name}さん！招待しましたのでDiscordアプリをご確認ください"
     else
-      redirect_to root_path, alert: "メールアドレスが登録されていません"
+      redirect_to root_path, alert: "Discordの登録メールアドレスが、スポンサーのメールアドレス一覧に見つかりませんでした。お手数ですがmail@example.comまで「スポンサー申請時の氏名」「Discordの登録メールアドレス」をご連絡ください。"
     end
   end
 end

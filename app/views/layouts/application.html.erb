@@ -19,16 +19,17 @@
         </h1>
       </header>
       <% if notice %>
-        <p class="notice"><%= notice %></p>
-      <% else %>
-        <p class="alert"><%= alert %></p>
+        <p class="message notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="message alert"><%= alert %></p>
       <% end %>
       <div class="cover">
         <%= image_tag("image.png") %>
       </div>
       <%= yield %>
       <footer>
-        <%= link_to "公式サイト", "httsp://teacherteacher.jp" %>
+        <%= link_to "Teacher Teacher 公式サイト", "httsp://teacherteacher.jp" %>
       </footer>
     </div>
   </body>

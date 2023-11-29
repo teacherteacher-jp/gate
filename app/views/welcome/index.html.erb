@@ -15,9 +15,13 @@
     <%= link_to("Discord", "https://discord.com", target: "_blank") %>
     のアカウントを作成する
   </li>
-  <li>本ページ下部の「参加する」ボタンを押し、Discordアカウントで認証する</li>
+  <li>下記の「参加する」ボタンを押し、Discordアカウントで認証する</li>
 </ol>
 
 <%= form_tag("/auth/discord", method: "post", data: { turbo: false }) do %>
   <button type="submit">参加する</button>
 <% end %>
+
+<p>
+  「スポンサー申請時にご入力いただいたメールアドレス」と「Discordの登録メールアドレス」が一致していない場合、お手数ですがmail@example.comまで「スポンサー申請時の氏名」「Discordの登録メールアドレス」をご連絡ください。
+</p>
