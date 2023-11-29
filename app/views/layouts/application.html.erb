@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Gate</title>
+    <title>Teacher Teacher コミュニティの入口</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
+    <%= favicon_link_tag("favicon.png") %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag("application", "data-turbo-track": "reload") %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <header>
-      <h1>
-        <%= link_to "Gate", root_path %>
-      </h1>
-    </header>
-    <% if notice %>
-      <p class="notice"><%= notice %></p>
-    <% else %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
-    <%= yield %>
+    <div class="container">
+      <header>
+        <h1>
+          <%= link_to "Teacher Teacher", root_path %>
+        </h1>
+      </header>
+      <% if notice %>
+        <p class="message notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="message alert"><%= alert %></p>
+      <% end %>
+      <div class="cover">
+        <%= image_tag("image.png") %>
+      </div>
+      <%= yield %>
+      <footer>
+        <%= link_to "Teacher Teacher 公式サイト", "httsp://teacherteacher.jp" %>
+      </footer>
+    </div>
   </body>
 </html>
