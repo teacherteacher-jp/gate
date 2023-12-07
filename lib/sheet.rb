@@ -12,7 +12,7 @@ module Sheet
       authorizer.fetch_access_token!
       api.authorization = authorizer
 
-      values = api.get_spreadsheet_values(SHEET_ID, "A:C", value_render_option: "FORMULA").values
+      values = api.get_spreadsheet_values(SHEET_ID, "A:C", value_render_option: "FORMATTED_VALUE").values
       values.each.with_index(1) do |(e, u, t), i|
         p [e, u, t, i]
         if e == email
