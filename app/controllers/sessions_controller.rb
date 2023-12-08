@@ -23,7 +23,8 @@ class SessionsController < ApplicationController
 
       redirect_to root_path, notice: "こんにちは、#{name}さん！招待しましたのでDiscordアプリをご確認ください"
     else
-      redirect_to root_path, alert: "Discordの登録メールアドレスが、スポンサーのメールアドレス一覧に見つかりませんでした。お手数ですがmail@example.comまで「スポンサー申請時の氏名」「Discordの登録メールアドレス」をご連絡ください。"
+      p [name, email, user_id]
+      redirect_to root_path, alert: "Discordの登録メールアドレスが、スポンサーのメールアドレス一覧に見つかりませんでした。お手数ですが「オンラインコミュニティ招待のお知らせ」に返信する形でご連絡くださいませ。"
     end
   end
 end
