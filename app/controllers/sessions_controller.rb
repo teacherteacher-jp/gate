@@ -10,15 +10,19 @@ class SessionsController < ApplicationController
 
     if found
       discord = Discord.new(ENV["DISCORD_BOT_TOKEN"])
-      server = discord.servers.find { |s| s["name"] == ENV["DISCORD_SERVER_NAME"] }
+      servers = discord.servers
+      p servers
+      server = servers.find { |s| s["name"] == ENV["DISCORD_SERVER_NAME"] }
       role = discord.roles(server["id"]).find { |r| r["name"] == ENV["DISCORD_ROLE_NAME"] }
       channels = discord.channels(server["id"])
       channel = channels.find { |c| c["name"] == ENV["DISCORD_CHANNEL_NAME"] }
       result = discord.invite(server_id: server["id"], user_id: user_id, user_token: user_token)
+      p result
 
       if result.status == 201
         discord.add_role(server_id: server["id"], user_id: user_id, role_id: role["id"])
-        discord.post_message(channel_id: channel["id"], content: "「#{name}」さんがやってきました、ようこそ！")
+        res = discord.post_message(channel_id: channel["id"], content: "<@!#{user_id}>さんがやってきました、ようこそ！")
+        p res
       end
 
       redirect_to root_path, notice: "こんにちは、#{name}さん！招待しましたのでDiscordアプリをご確認ください"
