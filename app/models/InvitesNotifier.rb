@@ -10,13 +10,14 @@ class InvitesNotifier
       invites.each_slice(50).each do |sub_invites|
         message =
           "```" +
-          ["created", "expires", "code", "inviter"].map { _1.ljust(10) }.join("\t") + "\n" +
+          ["created", "expires", "code", "uses", "inviter"].map { _1.ljust(10) }.join("\t") + "\n" +
           sub_invites.map { |inv|
             expires_at = inv.dig("expires_at")
             [
               inv.dig("created_at").first(10),
               expires_at ? expires_at.first(10) : "----------",
               inv.dig("code"),
+              inv.dig("uses").to_s,
               inv.dig("inviter", "global_name"),
             ].map { _1.ljust(10) }.join("\t")
           }.join("\n") +
