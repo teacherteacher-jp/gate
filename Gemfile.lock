@@ -101,9 +101,6 @@ GEM
       reline (>= 0.3.8)
     declarative (0.0.20)
     dotenv (3.1.2)
-    dotenv-rails (3.1.2)
-      dotenv (= 3.1.2)
-      railties (>= 6.1)
     drb (2.2.1)
     erubi (1.13.0)
     faraday (2.10.0)
@@ -363,7 +360,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
-  dotenv-rails
+  dotenv
   faraday
   google-apis-sheets_v4
   importmap-rails
