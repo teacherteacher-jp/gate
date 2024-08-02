@@ -4,13 +4,22 @@ services:
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
       - .:/app
+      - bundle:/usr/local/bundle
     ports:
       - "3000:3000"
     depends_on:
       - database
+  tailwindcss:
+    build: .
+    volumes:
+      - .:/app
+      - bundle:/usr/local/bundle
+    command: bin/rails tailwindcss:watch[always]
   database:
     image: postgres
     environment:
       - POSTGRES_PASSWORD=password
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
+volumes:
+  bundle:
