@@ -11,25 +11,25 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <div class="container">
-      <header>
-        <h1>
-          <%= link_to "Teacher Teacher", root_path %>
+  <body class="bg-gradient-to-r from-yellow-200 to-blue-200">
+    <div class="max-w-md w-full relative mx-auto box-border text-center bg-white">
+      <header class="w-full py-6 border-b border-gray-200">
+        <h1 class="text-2xl font-bold">
+          <%= link_to("Teacher Teacher", root_path, class: "text-gray-800 no-underline") %>
         </h1>
       </header>
       <% if notice %>
-        <p class="message notice"><%= notice %></p>
+        <p class="bg-green-500 text-white font-semibold text-base p-5 mb-5 box-border text-left"><%= notice %></p>
       <% end %>
       <% if alert %>
-        <p class="message alert"><%= alert %></p>
+        <p class="bg-red-500 text-white font-semibold text-base p-5 mb-5 box-border text-left"><%= alert %></p>
       <% end %>
-      <div class="cover">
-        <%= image_tag("image.png") %>
+      <div class="cover mb-5">
+        <%= image_tag("image.png", class: "w-full h-full object-cover") %>
       </div>
       <%= yield %>
-      <footer>
-        <%= link_to "Teacher Teacher 公式サイト", "httsp://teacherteacher.jp" %>
+      <footer class="py-2 border-t border-gray-200">
+        <%= link_to("Teacher Teacher 公式サイト", "https://teacherteacher.jp", class: "text-gray-600 no-underline") %>
       </footer>
     </div>
   </body>
